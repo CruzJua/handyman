@@ -51,7 +51,8 @@
 
   <!-- ── Resource hints for any third-party origins ── -->
   <link rel="dns-prefetch" href="//maps.google.com">
-  <link rel="preconnect" href="https://maps.google.com" crossorigin>
+  <!-- ── Preload the LCP hero background image ── -->
+  <link rel="preload" href="images/after-bathroom-marble-vanity.webp" as="image" type="image/webp" fetchpriority="high">
 </head>
 <body>
 
@@ -464,12 +465,12 @@
           <picture>
             <source srcset="images/before-bathroom-demo.webp" type="image/webp">
             <img class="img-before" src="images/before-bathroom-demo.jpg"
-                 alt="Bathroom before renovation — walls stripped down to studs" loading="lazy" width="1200" height="1600">
+                 alt="Bathroom before renovation — walls stripped down to studs" width="1200" height="1600">
           </picture>
           <picture>
             <source srcset="images/after-bathroom-marble-vanity.webp" type="image/webp">
             <img class="img-after" src="images/after-bathroom-marble-vanity.jpg"
-                 alt="Bathroom after renovation — luxury double marble vanity with brass fixtures and herringbone floor tile" loading="lazy" width="1200" height="1600">
+                 alt="Bathroom after renovation — luxury double marble vanity with brass fixtures and herringbone floor tile" width="1200" height="1600">
           </picture>
           <div class="comp-tag comp-tag-b" aria-hidden="true">Before</div>
           <div class="comp-tag comp-tag-a" aria-hidden="true">After</div>
@@ -812,7 +813,7 @@
   <div class="container">
     <strong>P Service LLC</strong> — Pedro Cervantes<br>
     Orem, UT 84057 &nbsp;&middot;&nbsp; Licensed &amp; Insured &nbsp;&middot;&nbsp;
-    <a href="tel:+18016377802">(801) 637-7802</a>
+    <a href="tel:+18016377802" style="color:var(--amber)">(801) 637-7802</a>
     <nav class="footer-nav" aria-label="Footer navigation">
       <a href="#services">Services</a>
       <a href="#before-after">Our Work</a>

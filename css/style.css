@@ -111,8 +111,8 @@ section    { scroll-margin-top: 68px; }
 
 .btn-amber         { background: var(--amber); color: var(--navy); }
 .btn-amber:hover   { background: var(--amber-dark); }
-.btn-green         { background: var(--green-light); color: #fff; }
-.btn-green:hover   { background: var(--green); }
+.btn-green         { background: var(--green); color: #fff; }
+.btn-green:hover   { background: #15803d; }
 .btn-navy          { background: var(--navy); color: #fff; }
 .btn-navy:hover    { background: var(--navy-light); }
 .btn-ghost         { background: transparent; color: #fff; border: 2px solid rgba(255,255,255,0.6); }
@@ -163,7 +163,7 @@ section    { scroll-margin-top: 68px; }
   content: '';
   position: absolute;
   inset: 0;
-  background: url('../images/after-bathroom-marble-vanity.jpg') center / cover no-repeat;
+  background: url('../images/after-bathroom-marble-vanity.webp') center / cover no-repeat;
   opacity: 0.12;
   pointer-events: none;
 }
@@ -630,7 +630,7 @@ footer a      { color: var(--amber); }
   flex-wrap: wrap;
   margin-top: 0.75rem;
 }
-.footer-nav a { color: rgba(255,255,255,0.5); transition: color var(--transition); }
+.footer-nav a { color: rgba(255,255,255,0.75); transition: color var(--transition); }
 .footer-nav a:hover { color: var(--amber); }
 
 /* ════════════════════════════════════════════════
