@@ -45,12 +45,12 @@
   }
   </script>
 
-  <!-- ── Performance: Preload critical CSS so it's not render-blocking ── -->
-  <link rel="preload" href="css/style.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
-  <noscript><link rel="stylesheet" href="css/style.css"></noscript>
+  <!-- ── Stylesheet ── -->
+  <link rel="stylesheet" href="css/style.css">
 
-  <!-- ── Resource hints for any third-party origins ── -->
+  <!-- ── DNS prefetch for external links ── -->
   <link rel="dns-prefetch" href="//maps.google.com">
+
   <!-- ── Preload the LCP hero background image ── -->
   <link rel="preload" href="images/after-bathroom-marble-vanity.webp" as="image" type="image/webp" fetchpriority="high">
 </head>
@@ -267,10 +267,12 @@
   </div>
 </header>
 
+<main id="main-content">
+
 <!-- ════════════════════════════════════════════════
      HERO
 ════════════════════════════════════════════════ -->
-<section id="hero" role="region" aria-label="Introduction" fetchpriority="high">
+<section id="hero" role="region" aria-label="Introduction">
   <div class="container">
     <div class="hero-content">
 
@@ -463,12 +465,12 @@
         <div class="comparison" id="comp1"
              role="img" aria-label="Bathroom renovation: before showing demolished walls, after showing luxury marble double vanity">
           <picture>
-            <source srcset="images/before-bathroom-demo.webp" type="image/webp">
+            <source srcset="images/before-bathroom-demo-sm.webp 600w, images/before-bathroom-demo.webp 1200w" sizes="(max-width:600px) 100vw, 50vw" type="image/webp">
             <img class="img-before" src="images/before-bathroom-demo.jpg"
                  alt="Bathroom before renovation — walls stripped down to studs" width="1200" height="1600">
           </picture>
           <picture>
-            <source srcset="images/after-bathroom-marble-vanity.webp" type="image/webp">
+            <source srcset="images/after-bathroom-marble-vanity-sm.webp 600w, images/after-bathroom-marble-vanity.webp 1200w" sizes="(max-width:600px) 100vw, 50vw" type="image/webp">
             <img class="img-after" src="images/after-bathroom-marble-vanity.jpg"
                  alt="Bathroom after renovation — luxury double marble vanity with brass fixtures and herringbone floor tile" width="1200" height="1600">
           </picture>
@@ -490,12 +492,12 @@
         <div class="comparison" id="comp2"
              role="img" aria-label="Shower installation: before showing cement board, after showing completed black and white tile shower">
           <picture>
-            <source srcset="images/before-bathroom-cement-board.webp" type="image/webp">
+            <source srcset="images/before-bathroom-cement-board-sm.webp 600w, images/before-bathroom-cement-board.webp 1200w" sizes="(max-width:600px) 100vw, 50vw" type="image/webp">
             <img class="img-before" src="images/before-bathroom-cement-board.jpg"
                  alt="Shower before — waterproof cement board with niche framing" loading="lazy" width="1200" height="1600">
           </picture>
           <picture>
-            <source srcset="images/after-bathroom-bw-shower-niche.webp" type="image/webp">
+            <source srcset="images/after-bathroom-bw-shower-niche-sm.webp 600w, images/after-bathroom-bw-shower-niche.webp 1200w" sizes="(max-width:600px) 100vw, 50vw" type="image/webp">
             <img class="img-after" src="images/after-bathroom-bw-shower-niche.jpg"
                  alt="Shower after — black and white subway tile with built-in niche and glass enclosure" loading="lazy" width="1200" height="1600">
           </picture>
@@ -517,12 +519,12 @@
         <div class="comparison" id="comp3"
              role="img" aria-label="Kitchen renovation: before showing gutted room, after showing marble tile backsplash installed">
           <picture>
-            <source srcset="images/before-gut-demo.webp" type="image/webp">
+            <source srcset="images/before-gut-demo-sm.webp 600w, images/before-gut-demo.webp 1200w" sizes="(max-width:600px) 100vw, 50vw" type="image/webp">
             <img class="img-before" src="images/before-gut-demo.jpg"
                  alt="Room before renovation — completely gutted to bare framing and concrete" loading="lazy" width="1200" height="900">
           </picture>
           <picture>
-            <source srcset="images/kitchen-marble-backsplash-progress.webp" type="image/webp">
+            <source srcset="images/kitchen-marble-backsplash-progress-sm.webp 600w, images/kitchen-marble-backsplash-progress.webp 1200w" sizes="(max-width:600px) 100vw, 50vw" type="image/webp">
             <img class="img-after" src="images/kitchen-marble-backsplash-progress.jpg"
                  alt="Kitchen after renovation — marble-look tile backsplash with white cabinetry" loading="lazy" width="1200" height="900">
           </picture>
@@ -563,7 +565,7 @@
       <div class="gitem reveal" data-category="bathroom" tabindex="0"
            data-caption="Luxury Master Bath — Double Marble Vanity with Brass Fixtures">
         <picture>
-          <source srcset="images/after-bathroom-marble-vanity.webp" type="image/webp">
+          <source srcset="images/after-bathroom-marble-vanity-sm.webp 600w, images/after-bathroom-marble-vanity.webp 1200w" sizes="(max-width:900px) 50vw, 360px" type="image/webp">
           <img src="images/after-bathroom-marble-vanity.jpg"
                alt="Luxury master bathroom with double marble vanity, brass sconces, arched mirrors, and herringbone marble floor tile"
                loading="lazy" width="1200" height="1600">
@@ -574,7 +576,7 @@
       <div class="gitem reveal" data-category="bathroom" tabindex="0"
            data-caption="Bathroom Remodel — Completed Glass-Door Shower">
         <picture>
-          <source srcset="images/after-bathroom-beige-shower.webp" type="image/webp">
+          <source srcset="images/after-bathroom-beige-shower-sm.webp 600w, images/after-bathroom-beige-shower.webp 1200w" sizes="(max-width:900px) 50vw, 360px" type="image/webp">
           <img src="images/after-bathroom-beige-shower.jpg"
                alt="Completed bathroom with large glass-door tile shower, modern vanity, and toilet"
                loading="lazy" width="1200" height="900">
@@ -585,7 +587,7 @@
       <div class="gitem reveal" data-category="bathroom" tabindex="0"
            data-caption="Black and White Shower — Full Tile Work with Glass Enclosure">
         <picture>
-          <source srcset="images/after-bathroom-bw-shower.webp" type="image/webp">
+          <source srcset="images/after-bathroom-bw-shower-sm.webp 600w, images/after-bathroom-bw-shower.webp 1200w" sizes="(max-width:900px) 50vw, 360px" type="image/webp">
           <img src="images/after-bathroom-bw-shower.jpg"
                alt="Black and white tile shower with diamond mosaic accent border and frameless glass enclosure"
                loading="lazy" width="1200" height="1600">
@@ -596,7 +598,7 @@
       <div class="gitem reveal" data-category="bathroom" tabindex="0"
            data-caption="Shower Niche — Mosaic Tile Detail and Built-In Shelf">
         <picture>
-          <source srcset="images/after-bathroom-bw-shower-niche.webp" type="image/webp">
+          <source srcset="images/after-bathroom-bw-shower-niche-sm.webp 600w, images/after-bathroom-bw-shower-niche.webp 1200w" sizes="(max-width:900px) 50vw, 360px" type="image/webp">
           <img src="images/after-bathroom-bw-shower-niche.jpg"
                alt="Shower niche with black and white diamond mosaic tile, white subway tile walls, and glass door"
                loading="lazy" width="1200" height="1600">
@@ -607,7 +609,7 @@
       <div class="gitem reveal" data-category="bathroom" tabindex="0"
            data-caption="Bathroom Tile Installation — Expert Craftsmanship in Action">
         <picture>
-          <source srcset="images/bathroom-tile-installation-progress.webp" type="image/webp">
+          <source srcset="images/bathroom-tile-installation-progress-sm.webp 600w, images/bathroom-tile-installation-progress.webp 1200w" sizes="(max-width:900px) 50vw, 360px" type="image/webp">
           <img src="images/bathroom-tile-installation-progress.jpg"
                alt="Tile installer carefully placing stone tile in a shower enclosure"
                loading="lazy" width="1200" height="1600">
@@ -618,7 +620,7 @@
       <div class="gitem reveal" data-category="kitchen" tabindex="0"
            data-caption="Kitchen Island — Marble Countertop with Undermount Sink">
         <picture>
-          <source srcset="images/kitchen-island-marble-completed.webp" type="image/webp">
+          <source srcset="images/kitchen-island-marble-completed-sm.webp 600w, images/kitchen-island-marble-completed.webp 1200w" sizes="(max-width:900px) 50vw, 360px" type="image/webp">
           <img src="images/kitchen-island-marble-completed.jpg"
                alt="Completed kitchen island with white marble countertop and undermount stainless sink"
                loading="lazy" width="1200" height="900">
@@ -629,7 +631,7 @@
       <div class="gitem reveal" data-category="kitchen" tabindex="0"
            data-caption="Kitchen Backsplash — Marble-Look Tile Installation">
         <picture>
-          <source srcset="images/kitchen-marble-backsplash-progress.webp" type="image/webp">
+          <source srcset="images/kitchen-marble-backsplash-progress-sm.webp 600w, images/kitchen-marble-backsplash-progress.webp 1200w" sizes="(max-width:900px) 50vw, 360px" type="image/webp">
           <img src="images/kitchen-marble-backsplash-progress.jpg"
                alt="Marble-look tile backsplash being installed in kitchen with white cabinetry"
                loading="lazy" width="1200" height="900">
@@ -640,7 +642,7 @@
       <div class="gitem reveal" data-category="kitchen" tabindex="0"
            data-caption="Kitchen Backsplash — Classic White Subway Tile">
         <picture>
-          <source srcset="images/kitchen-subway-tile-backsplash.webp" type="image/webp">
+          <source srcset="images/kitchen-subway-tile-backsplash-sm.webp 600w, images/kitchen-subway-tile-backsplash.webp 1200w" sizes="(max-width:900px) 50vw, 360px" type="image/webp">
           <img src="images/kitchen-subway-tile-backsplash.jpg"
                alt="White subway tile backsplash installed under kitchen range hood with white cabinetry"
                loading="lazy" width="1200" height="900">
@@ -651,7 +653,7 @@
       <div class="gitem reveal" data-category="construction" tabindex="0"
            data-caption="Window Installation — Framing and Rough Opening Stage">
         <picture>
-          <source srcset="images/window-installation-framing.webp" type="image/webp">
+          <source srcset="images/window-installation-framing-sm.webp 600w, images/window-installation-framing.webp 1200w" sizes="(max-width:900px) 50vw, 360px" type="image/webp">
           <img src="images/window-installation-framing.jpg"
                alt="Window rough opening framing with new lumber, insulation, and plumbing visible"
                loading="lazy" width="1200" height="1600">
@@ -662,7 +664,7 @@
       <div class="gitem reveal" data-category="construction" tabindex="0"
            data-caption="Exterior Porch — Overhang Repair and Re-Decking">
         <picture>
-          <source srcset="images/exterior-porch-repair.webp" type="image/webp">
+          <source srcset="images/exterior-porch-repair-sm.webp 600w, images/exterior-porch-repair.webp 1200w" sizes="(max-width:900px) 50vw, 360px" type="image/webp">
           <img src="images/exterior-porch-repair.jpg"
                alt="Exterior porch overhang repair with new structural framing and fresh decking boards"
                loading="lazy" width="1200" height="900">
@@ -809,6 +811,9 @@
 <!-- ════════════════════════════════════════════════
      FOOTER
 ════════════════════════════════════════════════ -->
+
+</main>
+
 <footer role="contentinfo">
   <div class="container">
     <strong>P Service LLC</strong> — Pedro Cervantes<br>
@@ -836,6 +841,6 @@
   <div id="lb-caption"></div>
 </div>
 
-<script src="js/main.js" defer fetchpriority="low"></script>
+<script src="js/main.js" defer></script>
 </body>
 </html>

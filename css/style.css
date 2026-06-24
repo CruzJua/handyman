@@ -10,7 +10,7 @@
   --navy-dark:   #0a1628;
   --amber:       #f59e0b;
   --amber-dark:  #d97706;
-  --green:       #16a34a;
+  --green:       #0c8037;
   --green-light: #22c55e;
   --bg:          #f4f6f9;
   --white:       #ffffff;
@@ -29,7 +29,8 @@
 *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
 html  { scroll-behavior: smooth; font-size: 16px; }
 body  { font-family: var(--font); color: var(--text); background: var(--bg); line-height: 1.65; overflow-x: hidden; }
-img   { max-width: 100%; height: auto; display: block; }
+img     { max-width: 100%; height: auto; display: block; }
+picture { display: block; }
 a     { text-decoration: none; color: inherit; }
 button { font-family: inherit; cursor: pointer; border: none; background: none; }
 
@@ -622,7 +623,7 @@ footer {
   line-height: 2;
 }
 footer strong { color: #fff; }
-footer a      { color: var(--amber); }
+footer a      { color: var(--amber); text-decoration: underline; }
 .footer-nav {
   display: flex;
   gap: 1.75rem;
@@ -630,7 +631,7 @@ footer a      { color: var(--amber); }
   flex-wrap: wrap;
   margin-top: 0.75rem;
 }
-.footer-nav a { color: rgba(255,255,255,0.75); transition: color var(--transition); }
+.footer-nav a { color: rgba(255,255,255,0.75); text-decoration: underline; transition: color var(--transition); }
 .footer-nav a:hover { color: var(--amber); }
 
 /* ════════════════════════════════════════════════
