@@ -5,29 +5,29 @@
 
 /* ── Before/After Comparison Sliders ── */
 document.querySelectorAll('.comparison').forEach(el => {
-  const after  = el.querySelector('.img-after');
+  const after = el.querySelector('.img-after');
   const handle = el.querySelector('.comp-handle');
   let dragging = false;
 
   function update(clientX) {
-    const r   = el.getBoundingClientRect();
-    let pct   = ((clientX - r.left) / r.width) * 100;
-    pct       = Math.min(Math.max(pct, 2), 98);
+    const r = el.getBoundingClientRect();
+    let pct = ((clientX - r.left) / r.width) * 100;
+    pct = Math.min(Math.max(pct, 2), 98);
     after.style.clipPath = `inset(0 ${100 - pct}% 0 0)`;
-    handle.style.left    = pct + '%';
+    handle.style.left = pct + '%';
   }
 
-  el.addEventListener('mousedown',  e  => { dragging = true; update(e.clientX); e.preventDefault(); });
-  window.addEventListener('mousemove', e  => { if (dragging) update(e.clientX); });
-  window.addEventListener('mouseup',   ()  => { dragging = false; });
+  el.addEventListener('mousedown', e => { dragging = true; update(e.clientX); e.preventDefault(); });
+  window.addEventListener('mousemove', e => { if (dragging) update(e.clientX); });
+  window.addEventListener('mouseup', () => { dragging = false; });
 
   el.addEventListener('touchstart', e => { dragging = true; update(e.touches[0].clientX); }, { passive: true });
   window.addEventListener('touchmove', e => { if (dragging) update(e.touches[0].clientX); }, { passive: true });
-  window.addEventListener('touchend',  ()  => { dragging = false; });
+  window.addEventListener('touchend', () => { dragging = false; });
 });
 
 /* ── Gallery Filter Tabs ── */
-const tabs  = document.querySelectorAll('.gtab');
+const tabs = document.querySelectorAll('.gtab');
 const items = document.querySelectorAll('.gitem');
 
 tabs.forEach(tab => {
@@ -45,14 +45,14 @@ tabs.forEach(tab => {
 });
 
 /* ── Lightbox ── */
-const lb      = document.getElementById('lightbox');
-const lbImg   = document.getElementById('lb-img');
-const lbCap   = document.getElementById('lb-caption');
+const lb = document.getElementById('lightbox');
+const lbImg = document.getElementById('lb-img');
+const lbCap = document.getElementById('lb-caption');
 const lbClose = document.getElementById('lb-close');
 
 function openLightbox(src, alt, caption) {
-  lbImg.src         = src;
-  lbImg.alt         = alt;
+  lbImg.src = src;
+  lbImg.alt = alt;
   lbCap.textContent = caption || alt;
   lb.classList.add('open');
   document.body.style.overflow = 'hidden';
@@ -70,7 +70,7 @@ items.forEach(item => {
     const img = item.querySelector('img');
     openLightbox(img.src, img.alt, item.dataset.caption || img.alt);
   };
-  item.addEventListener('click',   trigger);
+  item.addEventListener('click', trigger);
   item.addEventListener('keydown', e => {
     if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); trigger(); }
   });
@@ -81,20 +81,20 @@ lb.addEventListener('click', e => { if (e.target === lb) closeLightbox(); });
 document.addEventListener('keydown', e => { if (e.key === 'Escape') closeLightbox(); });
 
 /* ── Contact Form → mailto fallback ── */
-document.getElementById('contactForm').addEventListener('submit', function(e) {
+document.getElementById('contactForm').addEventListener('submit', function (e) {
   e.preventDefault();
 
-  const name    = document.getElementById('fname').value.trim();
-  const phone   = document.getElementById('fphone').value.trim();
+  const name = document.getElementById('fname').value.trim();
+  const phone = document.getElementById('fphone').value.trim();
   const service = document.getElementById('fservice').value;
-  const msg     = document.getElementById('fmsg').value.trim();
+  const msg = document.getElementById('fmsg').value.trim();
 
   if (!name || !phone || !service) {
     alert('Please fill in your name, phone number, and service type.');
     return;
   }
 
-  const body    = encodeURIComponent(`Name: ${name}\nPhone: ${phone}\nService Requested: ${service}\n\nProject Details:\n${msg || '(none provided)'}`);
+  const body = encodeURIComponent(`Name: ${name}\nPhone: ${phone}\nService Requested: ${service}\n\nProject Details:\n${msg || '(none provided)'}`);
   const subject = encodeURIComponent(`Free Estimate Request — ${service}`);
 
   window.location.href = `mailto:pedrocerva059@gmail.com?subject=${subject}&body=${body}`;

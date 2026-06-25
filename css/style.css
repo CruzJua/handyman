@@ -208,7 +208,7 @@ section    { scroll-margin-top: 68px; }
 .hero-cred .icon { color: var(--amber); width: 16px; height: 16px; }
 .hero-divider { color: rgba(255,255,255,0.2); font-size: 1.2rem; }
 .hero-ctas { display: flex; gap: 0.75rem; flex-wrap: wrap; }
-.hero-ctas .btn { font-size: 1.05rem; padding: 1rem 2rem; }
+.hero-ctas .btn { font-size: .75rem; padding: 1rem 2rem; }
 
 /* ════════════════════════════════════════════════
    TRUST BAR
@@ -283,6 +283,7 @@ section    { scroll-margin-top: 68px; }
 .ba-grid {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  max-width: 1400px;
   gap: 2.25rem;
 }
 .ba-label {
