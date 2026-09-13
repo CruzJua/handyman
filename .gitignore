@@ -2,3 +2,5 @@ image-storage/
 .lighthouseci/
 .DS_Store
 Thumbs.db
+nextjs*/
+archive/local-images/
